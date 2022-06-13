@@ -12,7 +12,9 @@ import tn.esprit.spring.entities.Timesheet;
 
 public interface IEmployeService {
 	
-	public int ajouterEmploye(Employe employe);
+	public Employe authenticate(String login, String password) ;
+	 
+	
 	public void mettreAjourEmailByEmployeId(String email, int employeId);
 	public void affecterEmployeADepartement(int employeId, int depId);
 	public void desaffecterEmployeDuDepartement(int employeId, int depId);
@@ -31,6 +33,10 @@ public interface IEmployeService {
 	public List<Employe> getAllEmployes();
 	public List<Timesheet> getTimesheetsByMissionAndDate(Employe employe, Mission mission, 
 	Date dateDebut, Date dateFin);
+
+	int addOrUpdateEmploye(Employe employe);
+	public Employe getEmployerById(int id);
+	public int ajouterEmploye(Employe employe);
 	
 	
 	
